@@ -1,0 +1,41 @@
+{
+  "name": "yapsodysnippets",
+  "displayName": "yapsodysnippets",
+  "description": "simple snippets for ansh library",
+  "version": "1.0.0",
+  "publisher": "yapsody",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradtraversy/something"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "c",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && editorTextFocus && inSnippetMode"
+      }
+    ]
+  }
+}

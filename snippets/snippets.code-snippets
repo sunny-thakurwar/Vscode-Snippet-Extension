@@ -1,0 +1,39 @@
+{
+  "Conditionally renders the children for different state ( eg : error, empty state )": {
+    "prefix": "conditionalscreen",
+    "body": [
+      "${1:<ConditionalScreen}",
+      "${2:loading={true \\}}",
+      "${3|pageLayerLoading = {true},portalProps = {{targetId: 'ansh-page-layer' \\, className: 'flex'}}|}",
+      "${4:showEmptyState = {true \\}}",
+      "${5|emptyDashboard = {<ComponentName />},emptyDashboard = {false}|}",
+      "${6:error={{code: 'error code here eg : 404',cta : <YAPButton>ButtontitleHere</YAPButton>,title:'Error title here'\\}\\}}",
+      ">",
+      "$7",
+      "</ConditionalScreen>",
+      ""
+    ],
+    "description": "Conditionally renders the children for different state ( eg : error, empty state )"
+  },
+  "renders a table with sort,hidden column and infinite scroll functionality and loading state": {
+    "prefix": "tableview",
+    "body": [
+      "${1:<TableView}",
+      "${2:loading={tableLoading \\}}",
+      "${3:columns={{  Header: 'Answer Type', accessor: 'answer_type',  Cell: (d) => d.value, overflow: 'truncate', \\}\\}}",
+      "${4:data={questions\\}}",
+      "${5:onRowClick={() => {\\}\\}}",
+      "${6:onSortChange={() => {\\} \\}}",
+      "${7:infiniteScrollProps={{",
+      "enable: true,",
+      "next:() => {\\},",
+      "itemPerPage: queryParams.page_size,",
+      "totalItems: count,",
+      " \\} \\}}",
+      "${8:emptyStateType={queryParams.status ? 'filter' : 'search'  \\}}",
+      "/>",
+      ""
+    ],
+    "description": "create a table "
+  }
+}
